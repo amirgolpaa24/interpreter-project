@@ -1,3 +1,3 @@
 # interpreter-project
-Amir Golpayegani
-Mahdi Hassanzadeh
+- Amir Golpayegani
+- Mahdi Hasanzadeh
