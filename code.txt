@@ -1,1 +1,1 @@
-{ "size" : 6 , "assignment" : { "x" : "abcde" , "y" : "fghij" } , "func" : { "body" : ["x" * "y" + "z"] , "input" : "x" } }
+{ "size" : 6 , "assignment" : { "x" : "abcde" , "y" : "fghij" } , "my_func" : { "body" : ["x" * "y" + "z"] , "input" : "x" } , "your_func" : { "body" : ["x" * "y" + "z"] , "input" : "x" } }
