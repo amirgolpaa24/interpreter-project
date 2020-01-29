@@ -1,1 +1,12 @@
-{ "size" : 6 , "assignment" : { "y" : "your_func(cat,dog)" , "x" : "my_func(a)" } , "my_func" : { "body" : ["my_x" * "y" + "z"] , "input" : "my_x" } , "your_func" : { "body" : ["your_x" + "your_y"] , "input" : "your_x" , "input" : "your_y" } , "docs" : "./files/" , "query" : "your_func(Amir,y)" }
+{ 	"size" : 6 , 
+	"assignment" : { "y" : "and_func(cat,dog)" , "x" : "or_func(cloud,tree)" } , 
+	"and_func" : { "body" : ["and_x" * "and_y"] , "input" : "and_x" , "input" : "and_y" } , 
+	"or_func" : { "body" : ["or_x" + "or_y"] , "input" : "or_x" , "input" : "or_y" } , 
+	"docs" : { 
+		"size" : 2 ,
+		"assignment" : { "a" : "x" } ,  
+		"docs" : "./files/" ,
+		"query" : "a"
+	} ,
+	"query" : "and_func(pencil,y)" 
+}

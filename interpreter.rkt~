@@ -235,7 +235,6 @@
 (define evaluate-query
   (lambda (query env files)
     (let ((search-query (evaluate-assignment "" '() query env '() '())))
-      ;(display search-query)
       (execute search-query files)
       )
     )
@@ -245,74 +244,7 @@
 
 (define execute
   (lambda (search-query files)
-    (if (string? search-query)
-        (find-files-containing-word files search-query)
-
-        (let ((operator (car search-query))
-              (operand1 (list-ref search-query 1)))
-          (let ((result1 (execute operand1 files)))
-            (cond
-              ((equal? operator "*")
-               (if (null? result1)
-                   '()
-                   (let ((operand2 (list-ref search-query 2)))
-                     (let ((result2 (execute operand2 files)))
-                       (intersection result1 result2)))
-                   ))
-              ((equal? operator "+")
-               (let ((operand2 (list-ref search-query 2)))
-                 (let ((result2 (execute operand2 files)))
-                   (union result1 result2))))
-              )
-            )
-          )
-        )
-    )
-  )
-
-(define find-files-containing-word
-  (lambda (files word)
-    (flatten
-     (map
-      (lambda (f)
-        (let ((in (open-input-file (string->path f))))
-          (if (string-contains? (read-string (file-size f) in) word)
-              f
-              '()
-              )))
-      files
-      )
-     )
-    )
-  )
-
-(define intersection
-  (lambda (lst1 lst2)
-    (if (or (null? lst1) (null? lst2))
-        '()
-        (if (member (car lst1) lst2)
-            (cons (car lst1) (intersection (cdr lst1) lst2))
-            (intersection (cdr lst1) lst2)
-            )
-        )
-    )
-  )
-
-(define minus
-  (lambda (lst1 lst2)
-    (if (null? lst1)
-        '()
-        (if (member (car lst1) lst2)
-            (cdr lst1)
-            (cons (car lst1) (minus (cdr lst1) lst2))
-            )
-        )
-    )
-  )
-
-(define union
-  (lambda (lst1 lst2)
-    (minus (append lst1 lst2) (intersection lst1 lst2))
+    files
     )
   )
 
