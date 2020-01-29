@@ -1,1 +1,1 @@
-{ "size" : 6 , "assignment" : { "x" : "abcde" , "y" : "fghij" } , "my_func" : { "body" : ["x" * "y" + "z"] , "input" : "x" } , "your_func" : { "body" : ["x" * "y" + "z"] , "input" : "x" } }
+{ "size" : 6 , "assignment" : { "y" : "your_func(cat,dog)" , "x" : "my_func(a)" } , "my_func" : { "body" : ["my_x" * "y" + "z"] , "input" : "my_x" } , "your_func" : { "body" : ["your_x" + "your_y"] , "input" : "your_x" , "input" : "your_y" } , "docs" : "./files/" , "query" : "your_func(Amir,y)" }
